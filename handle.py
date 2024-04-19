@@ -23,6 +23,7 @@ class Handle(object):
             map(sha1.update, list)
             hashcode = sha1.hexdigest()
             print(f"received timestamp: {timestamp}")
+            print(f"received: {nonce}")
             print (f"handle/GET func: hashcode, signature: {hashcode}, {signature}") , 
             if hashcode == signature:
                 return echostr
