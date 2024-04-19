@@ -22,10 +22,10 @@ class Handle(object):
             sha1 = hashlib.sha1()
             map(sha1.update, list)
             hashcode = sha1.hexdigest()
-            print ("handle/GET func: hashcode, signature: {hashcode}, {signature}") , 
+            print (f"handle/GET func: hashcode, signature: {hashcode}, {signature}") , 
             if hashcode == signature:
                 return echostr
             else:
-                return ""
+                return print("f(code error expect {hashcode})")
         except Exception as e:
             return e
