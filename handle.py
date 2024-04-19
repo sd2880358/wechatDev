@@ -13,11 +13,11 @@ class Handle(object):
                 return "hello, this is handle view"
             signature = data.signature
             timestamp = data.timestamp
-            nonce = b'data.nonce'
-            echostr = b'data.echostr'
-            token = b"os.environ['wc_token']" #请按照公众平台官网\基本配置中信息填写
+            nonce = data.nonce
+            echostr = data.echostr
+            token = os.environ['wc_token'] #请按照公众平台官网\基本配置中信息填写
 
-            intake = [token, timestamp, nonce]
+            intake = [i.encode('utf-8') for i in [token, timestamp, nonce]]
             intake.sort()
             sha1 = hashlib.sha1()
             for i in intake:
