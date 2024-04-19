@@ -32,8 +32,8 @@ class Handle(object):
                 return echostr
             else:
                 return ""
-        except Exception, Argument:
-            return Argument
+        except Exception as e:
+            return e
 
 class Check(object):
     def GET(self):
