@@ -44,6 +44,7 @@ class Handle(object):
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             elif isinstance(recMsg, receive.ImageMsg and recMsg.MsgType == 'image'):
+                print(f'image_url: {recMsg.PicUrl}')
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = recMsg.PicUrl
