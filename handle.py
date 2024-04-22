@@ -25,9 +25,6 @@ class Handle(object):
             for i in intake:
                  sha1.update(i)
             hashcode = sha1.hexdigest()
-            print(f"received timestamp: {timestamp}")
-            print(f"received: {nonce}")
-            print (f"handle/GET func: hashcode, signature: {hashcode}, {signature}") , 
             if hashcode == signature:
                 return echostr
             else:
@@ -44,6 +41,12 @@ class Handle(object):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = "收到但不回复"
+                replyMsg = reply.TextMsg(toUser, fromUser, content)
+                return replyMsg.send()
+            elif isinstance(recMsg, receive.ImageMsg and recMsg.MsgType == 'image'):
+                toUser = recMsg.FromUserName
+                fromUser = recMsg.ToUserName
+                content = recMsg.PicUrl
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:

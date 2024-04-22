@@ -34,3 +34,4 @@ class ImageMsg(Msg):
         Msg.__init__(self, xmlData)
         self.PicUrl = xmlData.find('PicUrl').text
         self.MediaId = xmlData.find('MediaId').text
+        self.image_url=xmlData.find('PicUrl').text
