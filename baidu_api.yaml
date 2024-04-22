@@ -1,0 +1,14 @@
+endpoint:
+  access_token: https://aip.baidubce.com/oauth/2.0/token
+  accurate_text: https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=
+
+header:
+  Content-Type: application/x-www-form-urlencoded
+  Accept: application/json
+
+api_params:
+  url: place_holder
+  detect_direction: 'false'
+  detect_language: 'false'
+  paragraph: 'false'
+  probability: 'false'

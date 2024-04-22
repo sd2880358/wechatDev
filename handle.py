@@ -6,6 +6,8 @@ import web
 import os
 import reply
 import receive
+import serach_image
+import yaml
 
 class Handle(object):
     def GET(self):
@@ -47,7 +49,12 @@ class Handle(object):
                 print(f'image_url: {recMsg.PicUrl}')
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                content = f'The image link is following {recMsg.PicUrl} \
+                with open('./baidu_api.yaml', 'r') as f:
+                    env_variables = yaml.safe_load(f)
+                API_KEY = os.environ['baiduAPIKey']
+                SECRET_KEY = os.environ['baiduAPISecret']
+                image = serach_image.FromBaidu(image_url=recMsg.PicUrl,api_key=API_KEY,api_secret=SECRET_KEY,params_dic=env_variables)
+                content = f'The image info is following {image.main()} \
                 this is the new line'
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
