@@ -48,7 +48,7 @@ class Handle(object):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = f'The image link is following {recMsg.PicUrl} \
-                    this is the new line'
+                this is the new line'
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:
