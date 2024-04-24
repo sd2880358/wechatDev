@@ -8,7 +8,7 @@ import reply
 import receive
 import serach_image
 import yaml
-
+from logging_config import logger
 class Handle(object):
     def GET(self):
         try:
@@ -30,13 +30,13 @@ class Handle(object):
             if hashcode == signature:
                 return echostr
             else:
-                return "f(code error expect {hashcode})"
+                return "f(code error expect)"
         except Exception as e:
             return e
     def POST(self):
         try:
             webData = web.data()
-            print (f"Handle Post webdata is {webData}")
+            logger.info(f"Handle Post webdata is {webData}")
             #后台打日志
             recMsg = receive.parse_xml(webData)
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
@@ -59,7 +59,7 @@ class Handle(object):
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:
-                print ("暂且不处理")
+                logger.info("暂且不处理")
                 return "success"
         except Exception as e:
             return e
