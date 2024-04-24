@@ -21,7 +21,7 @@ LOGGING = {
             'class': 'logging.handlers.RotatingFileHandler',
             'level': 'INFO',
             'formatter': 'json',
-            'filename': "/home/ubuntu/wechatDev/wechatDev/log/file_handler.log",
+            'filename': "/home/ubuntu/wechatDev/log/file_handler.log",
             'maxBytes': 1024,
             'backupCount': 3
         }
