@@ -49,7 +49,7 @@ class Handle(object):
                 print(f'image_url: {recMsg.PicUrl}')
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                with open('./baidu_api.yaml', 'r') as f:
+                with open(os.environ['baiduYamlPath'], 'r') as f:
                     env_variables = yaml.safe_load(f)
                 API_KEY = os.environ['baiduAPIKey']
                 SECRET_KEY = os.environ['baiduAPISecret']
