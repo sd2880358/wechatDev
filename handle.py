@@ -62,4 +62,5 @@ class Handle(object):
                 logger.info("暂且不处理")
                 return "success"
         except Exception as e:
+            logger.error(e)
             return e
