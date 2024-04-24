@@ -18,14 +18,18 @@ class FromBaidu:
         '''
         Get access token and call baidu text extract API
         '''
-        url =f"{self.endpoint['accurate_text']}{self.get_access_token()}"
-        self.api_params['url'] = self.image_url
-        payload = urllib.parse.urlencode(self.api_params, quote_via=urllib.parse.quote)
-        print(payload)
-        #TODO: change token to parameters instead.
-        response = requests.request("POST", url, headers=self.header, data=payload)
-        logger.info(response.json())
-        return response.json()
+        try:
+            url =f"{self.endpoint['accurate_text']}{self.get_access_token()}"
+            self.api_params['url'] = self.image_url
+            payload = urllib.parse.urlencode(self.api_params, quote_via=urllib.parse.quote)
+            print(payload)
+            #TODO: change token to parameters instead.
+            response = requests.request("POST", url, headers=self.header, data=payload)
+            logger.info(response.json())
+            return response.json()
+        except Exception as e:
+            logger.error(e)
+            raise e
     
     def get_access_token(self):
         """
