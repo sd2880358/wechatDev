@@ -23,8 +23,7 @@ LOGGING = {
             'formatter': 'json',
             'filename': "/home/ubuntu/wechatDev/wechatDev/log/file_handler.log",
             'maxBytes': 1024,
-            'backupCount': 3,
-            # 'encoding': 'utf-8',
+            'backupCount': 3
         }
     },
     "loggers": {
