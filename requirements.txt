@@ -1,5 +1,5 @@
 boto3
 pillow
 requests
-pythonjsonlogger
+python-json-logger
 django
