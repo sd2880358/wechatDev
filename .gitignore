@@ -1,0 +1,10 @@
+sample_note.ipynb
+
+*.log
+
+__pycache__
+
+ssh-key*
+
+
+mainProject/mainProject/settings.py
