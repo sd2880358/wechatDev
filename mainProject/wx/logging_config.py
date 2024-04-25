@@ -17,24 +17,24 @@ LOGGING = {
             "stream": "ext://sys.stdout",
             "formatter": "json"
         },
-        'file_handler': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'level': 'INFO',
-            'formatter': 'json',
-            'filename': "/home/ubuntu/wechatDev/log/file_handler.log",
-            'maxBytes': 1024,
-            'backupCount': 3
-        }
+        # 'file_handler': {
+        #     'class': 'logging.handlers.RotatingFileHandler',
+        #     'level': 'INFO',
+        #     'formatter': 'json',
+        #     'filename': "/home/ubuntu/wechatDev/log/file_handler.log",
+        #     'maxBytes': 1024,
+        #     'backupCount': 3
+        # }
     },
     "loggers": {
         "": {
             "handlers": ["stdout"], 
             "level": "DEBUG"
             },
-        "default_log":{
-            "handlers": ["file_handler"],
-            "level": "INFO"
-        }
+        # "default_log":{
+        #     "handlers": ["file_handler"],
+        #     "level": "INFO"
+        # }
         },
                     
 }

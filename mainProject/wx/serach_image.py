@@ -2,7 +2,7 @@ import requests
 import yaml
 import urllib
 import os
-from logging_config import logger
+from wx.logging_config import logger
 class FromBaidu:
     def __init__(self, **args) -> None:
         self.api_key = args['api_key']
